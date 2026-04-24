@@ -4,7 +4,7 @@
  * methods to validate inputs from the user. 
  */
 
-public class InputValidator {
-    
+public class InputValidator
+{
 
 }
