@@ -6,11 +6,9 @@
 
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse; 
+import static org.junit.Assert.assertFalse;
 
 public class InputValidatorTest {
-    
-  
     
     // --- USERNAME TESTS ---
     @Test
@@ -63,10 +61,6 @@ public class InputValidatorTest {
     @Test
     public void testPhoneInvalidLength() {
         assertFalse(InputValidator.isValidPhone("12345"));
-    }
-
-    private void assertTrue(boolean validUsername) {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
     
 }
