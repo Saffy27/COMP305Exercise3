@@ -5,62 +5,69 @@
  */
 
 import org.junit.Test;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.*;
 
+/**
+ * Unit tests for InputValidator class.
+ */
 public class InputValidatorTest {
-    
-    // --- USERNAME TESTS ---
+
+    // DOB tests
     @Test
-    public void testUsernameIsValid() {
-        // Valid username (under 20 chars, not empty)
-        assertTrue(InputValidator.isValidUsername("Artist_Alex"));
+    public void testValidDOB() {
+        assertTrue(InputValidator.isValidDOB("2000-05-10"));
     }
 
     @Test
-    public void testUsernameTooLong() {
-        // Should be false because it's over 20 characters
-        assertFalse(InputValidator.isValidUsername("ThisUsernameIsWayTooLongForTheSystem"));
+    public void testUnderageDOB() {
+        assertFalse(InputValidator.isValidDOB("2010-01-01"));
     }
 
     @Test
-    public void testUsernameEmpty() {
-        assertFalse(InputValidator.isValidUsername(""));
-    }
-
-    // --- PASSWORD TESTS ---
-    @Test
-    public void testPasswordValid() {
-        // 8+ chars, Upper, Lower, Digit, Special (! - * .)
-        assertTrue(InputValidator.isValidPassword("ArtPass1!"));
+    public void testInvalidDOBFormat() {
+        assertFalse(InputValidator.isValidDOB("05-10-2000"));
     }
 
     @Test
-    public void testPasswordMissingDigit() {
-        assertFalse(InputValidator.isValidPassword("ArtPass!"));
+    public void testEmptyDOB() {
+        assertFalse(InputValidator.isValidDOB(""));
     }
 
     @Test
-    public void testPasswordInvalidChar() {
-        // '#' is not in the allowed list: !, -, *, .
-        assertFalse(InputValidator.isValidPassword("ArtPass1#"));
+    public void testNullDOB() {
+        assertFalse(InputValidator.isValidDOB(null));
     }
 
-    // --- PHONE NUMBER TESTS ---
+    // Postal code tests
     @Test
-    public void testPhoneValidWithDashes() {
-        assertTrue(InputValidator.isValidPhone("123-456-7890"));
-    }
-
-    @Test
-    public void testPhoneValidEmpty() {
-        // The requirements say phone can be empty
-        assertTrue(InputValidator.isValidPhone(""));
+    public void testValidPostalCode() {
+        assertTrue(InputValidator.isValidPostalCode("49006"));
     }
 
     @Test
-    public void testPhoneInvalidLength() {
-        assertFalse(InputValidator.isValidPhone("12345"));
+    public void testInvalidPostalCode() {
+        assertFalse(InputValidator.isValidPostalCode("12a45"));
     }
-    
+
+    @Test
+    public void testEmptyPostalCodeAllowed() {
+        assertTrue(InputValidator.isValidPostalCode(""));
+    }
+
+    // Title tests
+    @Test
+    public void testValidTitle() {
+        assertTrue(InputValidator.isValidTitle("Sunset Painting"));
+    }
+
+    @Test
+    public void testEmptyTitle() {
+        assertFalse(InputValidator.isValidTitle(""));
+    }
+
+    @Test
+    public void testTooLongTitle() {
+        String longTitle = new String(new char[101]).replace('\0', 'a');
+        assertFalse(InputValidator.isValidTitle(longTitle));
+    }
 }

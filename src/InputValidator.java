@@ -4,49 +4,44 @@
  * methods to validate inputs from the user. 
  */
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
+/**
+ * InputValidator class provides static methods to validate user input fields.
+ */
 public class InputValidator {
-    
-    public static void main(String[] args) { }
-    
-    /**
-     * checks if username is not null, not empty, and under 20 chars
-     */
-    public static boolean isValidUsername(String username) {
-        // check for null or empty
-        if (username == null || username.isEmpty()) {
+
+    // Validate Date of Birth (must be 18+ and yyyy-MM-dd)
+    public static boolean isValidDOB(String dob) {
+        if (dob == null || dob.isEmpty()) return false;
+
+        try {
+            LocalDate birthDate = LocalDate.parse(dob, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+
+            if (birthDate.isAfter(LocalDate.now())) return false;
+
+            return Period.between(birthDate, LocalDate.now()).getYears() >= 18;
+
+        } catch (DateTimeParseException e) {
             return false;
         }
-        // check length limit
-        return username.length() <= 20;
     }
 
-    /**
-     * checks for 8+ chars, upper, lower, digit, and special char
-     */
-    public static boolean isValidPassword(String password) {
-        if (password == null) {
-            return false;
-        }
-        
-        // gemini helped with this regex. only allows !, -, *, and . per tests
-        String passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!\\-*.]).{8,}$";
-        return password.matches(passwordPattern);
+    // Postal Code: 5 digits or empty allowed
+    public static boolean isValidPostalCode(String code) {
+        if (code == null) return false;
+        if (code.isEmpty()) return true;
+
+        return code.matches("\\d{5}");
     }
 
-    /**
-     * checks for 10 digits, allows dashes/spaces, and can be empty
-     */
-    public static boolean isValidPhone(String phone) {
-        // returning true if empty or null per project rules
-        if (phone == null || phone.isEmpty()) {
-            return true;
-        }
+    // Title: not empty, max 100 chars
+    public static boolean isValidTitle(String title) {
+        if (title == null || title.isEmpty()) return false;
 
-        // strip everything except the numbers
-        String digits = phone.replaceAll("[^0-9]", "");
-        
-        // must be exactly 10 digits to be valid
-        return digits.length() == 10;
+        return title.length() <= 100;
     }
-
 }
