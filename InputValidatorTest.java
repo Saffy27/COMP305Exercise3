@@ -13,7 +13,7 @@ import org.junit.runner.notification.Failure;
 public class InputValidatorTest {
 
     // --- Tests for Name ---
-
+    
     // --- USERNAME TESTS ---
     @Test
     public void testUsernameIsValid() {
@@ -131,6 +131,7 @@ public class InputValidatorTest {
         System.out.println(result.wasSuccessful() ? "All tests passed." : "Some tests failed.");
     }
 
+
     // CREATE MORE TESTS HERE
 
     // --- MEDIUM TESTS ---
@@ -209,5 +210,6 @@ public class InputValidatorTest {
         assertFalse(InputValidator.isValidPrice("15.5"));
         assertFalse(InputValidator.isValidPrice("Free"));
     }
+
 
 }

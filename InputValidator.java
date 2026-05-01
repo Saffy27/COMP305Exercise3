@@ -25,6 +25,7 @@ public class InputValidator
     }
 public class InputValidator {
 
+
     /**
      * checks if username is not null, not empty, and under 20 chars
      */
@@ -70,7 +71,7 @@ public class InputValidator {
         if (password == null) {
             return false;
         }
-
+        
         // gemini helped with this regex. only allows !, -, *, and . per tests
         String passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!\\-*.]).{8,}$";
         return password.matches(passwordPattern);
@@ -87,7 +88,7 @@ public class InputValidator {
 
         // strip everything except the numbers
         String digits = phone.replaceAll("[^0-9]", "");
-
+        
         // must be exactly 10 digits to be valid
         return digits.length() == 10;
     }
