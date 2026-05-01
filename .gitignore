@@ -4,3 +4,4 @@
 # Compiled Java files
 bin/
 *.class
+/.vscode/
