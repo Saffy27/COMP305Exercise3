@@ -24,6 +24,6 @@
 * inputvalidator.java: contains methods used for getting inputs for InputValidatorTest to run its tests on.
 * inputvalidatortest.java: holds the tests which determine whether the inputs are properly input and properly formatted with the proper data.
 
-## reflection
+### reflection
 * making sure everything was clean once things began to get merged was probably the hardest part, since we didn't have a solid plan of how we were going to implement things.
 * I learned how to make and manage pull requests to help verify that merges were good before being pushed to main.
