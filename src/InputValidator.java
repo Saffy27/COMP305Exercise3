@@ -23,7 +23,7 @@ import java.util.List;
 public class InputValidator {
 
     // Placeholder method for the description input.
-    String getDescription()
+    static String getDescription()
     {
         //String description = "Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!Here is a string that is over 1000 characters!!!!!";
         String description = "hello world";
@@ -32,7 +32,7 @@ public class InputValidator {
     }
 
     // Placeholder method for the filepath input.
-    File getFile()
+    static File getFile()
     {
         File input_file = new File("test.png");
         //File input_file = new File("");
@@ -40,7 +40,7 @@ public class InputValidator {
     }
 
     // Placeholder method for the dimensions input
-    Object[] getDimensions()
+    static Object[] getDimensions()
     {
         Object[] dimensions = new Object[3];
         float width = 2;
