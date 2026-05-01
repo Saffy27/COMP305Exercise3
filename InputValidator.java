@@ -4,7 +4,27 @@
  * * @author Jeremy Tarn
  * @version 1.1
  */
+import java.util.Arrays;
+import java.util.List;
+
+public class InputValidator
+{
+
+    public static boolean isValidMedium(String medium)
+    {
+        // Reject if null or empty
+        if (medium == null || medium.isEmpty())
+        {
+            return false;
+        }
+        // List of allowed media (used in tests)
+        List<String> validMedia = Arrays.asList("Oil Paint", "Watercolor");
+
+        // Check if the input medium is included in the list
+        return validMedia.contains(medium);
+    }
 public class InputValidator {
+
 
     /**
      * checks if username is not null, not empty, and under 20 chars
@@ -16,6 +36,32 @@ public class InputValidator {
         }
         // check length limit
         return username.length() <= 20;
+    }
+
+    public static boolean isValidCreationDate(String creationDate)
+    {
+        // Reject if null or empty
+        if (creationDate == null || creationDate.isEmpty())
+        {
+            return false;
+        }
+        // Check yyyy-MMdd- format using regex
+        return creationDate.matches("^\\d{4}-\\d{4}-$");
+    }
+
+    public static boolean isValidPrice(String price)
+    {
+        if (price == null)
+        {
+            return false;
+        }
+        // Price is allowed to be empty
+        if (price.isEmpty())
+        {
+            return true;
+        }
+        // Check format (e.g., 15.50) using regex
+        return price.matches("^\\d+\\.\\d{2}$");
     }
 
     /**
