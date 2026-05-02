@@ -28,6 +28,7 @@
 * making sure everything was clean once things began to get merged was probably the hardest part, since we didn't have a solid plan of how we were going to implement things.
 * I learned how to make and manage pull requests to help verify that merges were good before being pushed to main.
 
+
 ## inputvalidator - Taiki Sawamata
 
 ### classes
@@ -37,3 +38,13 @@
 ### reflection
 * I struggled a bit with setting up JUnit in VS Code at first, but switching to IntelliJ IDEA made it much easier to run the tests and understand the TDD cycle.
 * I also learned how to handle Git merge conflicts on GitHub when combining my code with my team's work. I had that trouble because I deleted the code in cloned repository on my computer after pulling from original one. I was scared if I erase someone's work, but it was fine.
+
+## inputvalidator - Jeremy Tarn
+
+### classes
+* inputvalidator.java: does the name, last name, email
+* inputvalidatortest.java: has all the junit tests for everything
+
+### reflection
+* I was having difficulties with comments and how to install java and make it work. I learn a lot from this assignment.
+
