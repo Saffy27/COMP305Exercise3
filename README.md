@@ -27,3 +27,12 @@
 ### reflection
 * making sure everything was clean once things began to get merged was probably the hardest part, since we didn't have a solid plan of how we were going to implement things.
 * I learned how to make and manage pull requests to help verify that merges were good before being pushed to main.
+
+## inputvalidator - Jeremy Tarn
+
+### classes
+* inputvalidator.java: does the name, last name, email
+* inputvalidatortest.java: has all the junit tests for everything
+
+### reflection
+* I was having difficulties with comments and how to install java and make it work. I learn a lot from this assignment.
